@@ -1,0 +1,495 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --padding-contenedor: 100px 0;
+    --color-titulo: #0c22a0;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: var(--padding-contenedor);
+}
+
+.san {
+    width: 100%;
+    /*Para la imagen del fondo*/
+    height: 100vh;
+    min-height: 600px;
+    max-height: 800px;
+    position: relative;
+    /*MUY IMPORTANTE es como si diera un saldo de pagina mientras que el absolute lo hace solo encima de ello*/
+    display: grid;
+    /*Para creart dos filas*/
+    grid-template-rows: 100px 1fr;
+    color: #fff;
+    /*Para que todos los elementos sean de color blanco */
+}
+
+.seccion {
+    --padding-contenedor: 0;
+}
+
+.san::before {
+    /*Crear un acomodador en relacion a san*/
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, #0000008c 0%, #0000008c 100%),
+        url(./imagenes/S4N.jpg);
+    /*La PARTE DE LA IMAGEN DE FONDO*/
+    background-size: cover;
+    /*Para que se ajuste a la pagina*/
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    z-index: -1;
+}
+
+/*SECCIONES navegacion*/
+.seccion {
+    --padding-contenedor: 0;
+    height: 100%;
+    display: flex;
+    /*Para poner los elementos al lado del otro*/
+    align-items: center;
+    /*Para centrar verticalmente*/
+}
+
+.seccion_titulo {
+    font-weight: 100;
+}
+
+.seccion_items {
+    list-style: none;
+    /*Para quitar estilo de listas*/
+}
+
+/*MENU DE NAVEGACION*/
+.seccion_link {
+    /*seccion de UL*/
+    margin-left: auto;
+    /*Para que se pasen a la derecha por uso de flex box*/
+    padding: 0%;
+    display: grid;
+    grid-auto-flow: column;
+    /*Para que se ponga al lado de la otra*/
+    grid-auto-columns: max-content;
+    /*para que ocupe su maximo contenido*/
+    gap: 2em;
+    /*para que tenga espacio*/
+}
+
+.seccion_links {
+    /*seccion de li*/
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+/*LA PARTE DEL MENU*/
+.seccion_menu {
+    margin-left: auto;
+    cursor: pointer;
+    /*Para cuando cada que pase el mouse se active*/
+    display: none;
+    /*que no aparesca hasta estar en DISP.MOVIL*/
+}
+
+.seccion_imagen {
+    display: block;
+    /*Separa de otros elementos*/
+    width: 30px;
+}
+
+.seccion_close {
+    display: var(--show, none);
+    /*Para que desaparesca igual que el icono del menú*/
+}
+
+/*SAN el CONTENEDOR*/
+.san_contenedor {
+    max-width: 800px;
+    /*que tenga un ancho maximo de 800pixeles*/
+    display: grid;
+    /*crear un espacio vertical*/
+    --padding-contenedor: 0;
+    /*alejamiento*/
+    grid-auto-rows: max-content;
+    /*las filas creadas automaticamente sean de maximo contenido, para que asi no ocupen mas de lo necesario*/
+    align-content: center;
+    gap: 1em;
+    padding-bottom: 100px;
+    text-align: center;
+    /*para que todo su texto se centre*/
+}
+
+.san_titulo {
+    font-size: 3rem;
+}
+
+.san_historia {
+    margin-bottom: 20px;
+}
+
+.entra {
+    display: inline-block;
+    background-color: rgb(76, 163, 144);
+    justify-self: center;
+    /*Para que lo mande al centro,ADEMAS DE QUE HARÁ QUE SOLO OCUPE SU CONTENIDO*/
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 32px;
+}
+
+/*CENA*/
+.TituloC{
+  color: black;  
+}
+.span--amig{
+    color: rgb(223, 76, 161);
+}
+.img_cena{
+padding: auto;
+width: 50%;
+height: 50%;
+justify-content: center;
+margin: auto;
+}
+.texto{
+    display: flex;
+    justify-content: center;
+    grid-auto-columns: max-content;
+    margin: auto;
+}
+
+/*PARTE DE LAS HISTORIAS*/
+.sobre {
+    text-align: center;
+}
+
+.subtitulo {
+    color: var(--color-titulo);
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.sobre_parrafo {
+    line-height: 1.7;
+}
+
+.sobre_menu {
+    padding-top: 80px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    /*Para que cree columnas automaticamente*/
+}
+
+.sobre_iconos {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.sobre_icon {
+    width: 40px;
+}
+
+/*CONOCIMIENTO DAAA*/
+.conocimiento {
+    background-color: #9696ee;
+    background-image: radial-gradient(#444cf7 0.5px, #9696ee 0.5px);
+    background-size: 10px 10px;
+    overflow: hidden;
+}
+.conocimiento_contenedor{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+}
+.conocimiento_galeria{
+    max-width: 500px;
+}
+.conocimiento_parrafo{
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+.conocimiento_imagen{
+    width: 100%;
+    display: block;
+}
+/*______________________________________________________*/
+
+/*AMIGOOOOOOOOOOOOOOOS*/
+.personalidad{
+    background-color: azure;
+}
+.personalidad_contenedor{
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr 1fr 1fr 50px;/*MODIFICACION DE PARTES*/
+    gap: 1em;
+    align-items: center;
+}
+.personalidad_cuerpo{
+    display: grid;
+    grid-template-columns: 1fr max-content;/*Parte de modificacion*/
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/6;/*Alinear las columas iguales a la primera*/
+    grid-row: 1/2; /*Sobre poner*/
+    opacity: 0;
+    pointer-events: none;/*Para no poder selecioonarlos al pasar el cursor*/
+}
+.personalidad_cuerpo--espetaculo{
+    pointer-events: unset; /*Para que vaya a la propiedad original*/
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out; /*Para que solo muestre al pasar el cursor*/
+}
+
+.personalidad_imagen{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 30%;/*Centramos la imagen en X y Y*/
+}
+.personalidad_texto{
+    max-width: 700px;
+}
+.personalidad_flecha{
+    width: 90%;
+    cursor: pointer;
+}
+.personalidad_persona{
+    background-color: rgb(38, 88, 197);
+    color: white;
+    display: inline-block;
+    padding: 5px;
+}
+/*//////////////////////////////////////////*/
+.mensaje_redes{
+    width: 60%;
+    margin: 0 auto;
+}
+.pagina{
+    background-color: rgb(2, 3, 51);
+}
+.pagina_titulo{
+    color: white;
+}
+.pagina_informativo{
+    color: white;
+}
+.pagina_contenedor{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid white;
+    padding-bottom: 60px;
+}
+.seccion--pagina{
+    padding-bottom: 20px;
+    display: grid;
+    gap: 1em;
+    grid-auto-flow: row;
+    height: 100%;
+}
+.pagina_mensajes{
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+}
+.pagina_mensaje{
+    background-color: white;
+    height: 50px;
+    display: block;
+    padding-left: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    margin-right: 16px;
+}
+.pagina_enviar{
+    margin-left: auto;
+    display: inline-block;
+    height: 50px;
+    padding: 0 20px;
+    background-color: rgb(55, 117, 187);
+    border: none;
+    font-size: 1rem;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.pagina_copy{
+    --padding-contenedor: 30px 0;
+    text-align: center;
+    color: white;
+}
+.pagina_por{
+    font-weight: 300px;
+
+}
+.pagina_iconos{
+    display: inline-flex;
+    margin-bottom: 10px;
+}
+.pagina_imagen{
+    width: 30px;
+}
+/*ADAAAAPTACION*/
+@media (max-width: 800px) {
+    .seccion_menu{
+        display: block;
+    }
+    .seccion_link--menu{
+        position: fixed;
+        background-color: black;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 100;
+        opacity: 0;
+        position: none;
+        transition: .7s opacity;
+    }    
+    .seccion_link--show{
+        --show: block;
+        opacity: 1;
+        pointer-events: unset;
+    }
+    .seccion_close{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        cursor: pointer;
+    }
+    .san_titulo{
+        font-size: 2.5rem;
+    }
+    .sobre_menu{
+        gap: 2em;
+    }
+    .sobre_iconos:last-of-type{
+        grid-column: 1/-1;
+    }
+    .conocimiento_contenedor{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap: 3em;
+        text-align: center;
+    }
+
+    .conocimiento_galeria{
+        grid-row: 1/2;
+        justify-self: center;
+    }
+
+/*    .personalidad_contenedor{
+        grid-template-columns: 30px 1fr 30px;
+    }
+
+    .personalidad_cuerpo{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        gap: 3em;
+        justify-items:center ;
+    }
+
+
+    .perosnalidad_imagen{
+        width: 200px;
+        height: 200px;
+        
+    }*/
+
+    .questions__copy{/*mantiene*/
+        width: 100%;
+    }
+
+    .pagina_contenedor{
+        flex-wrap: wrap;
+    }
+
+    .secction--pagina{
+        width: 100%;
+        justify-items: center;
+    }
+
+    .seccion_link--pagina{
+        width: 100%;
+        justify-content: space-evenly;
+        margin: 0;
+    }
+
+    .pagina_form{
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    .pagina_redes{
+        flex: 1;
+    }
+
+}
+/*ADAPTACION A D. MOBILES*/
+@media (max-width: 768px){
+    .personalidad_cuerpo{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+    }
+    .personalidad_galeria{
+        grid-row: 1/2;
+    }
+    .personalidad_imagen{
+        width: 210px;
+        height: 210px;
+    }
+}
+
+/*ADAPTACION A D. MOBILES*/
+@media (max-width: 425px){
+    .personalidad_contenedor{
+        grid-template-columns: 25px 1fr 1fr 1fr 1fr 25px;
+    }
+    .personalidad_flecha{
+        width: 100%;
+    }
+    .personalidad_imagen{
+        width: 180px;
+        height: 180x;
+    }
+    .subtitulo{
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    .personalidad_revision{
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+
